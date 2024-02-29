@@ -1,0 +1,72 @@
+{% extends 'info/base.html' %}
+{% load custom_tags %}
+{% block content %}
+    
+<div class="card mb-3">       
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    </div>
+  
+              <form class="form" role="form" method="GET" action="{% url 't_lesson_date' request.user.teacher.id_teacher%}">
+                  {% csrf_token %}
+                  <div class="row">
+                  
+                  
+                  {% for f in form %}
+                  <div class="col-md-auto"><label for="{{f.id_for_label}}">{{ f.label }}: </label> {{ f }}</div>
+                  <div class="col-md-auto form-error">{{ f.errors }}</div>
+                  
+                  
+                  {% endfor %}
+                  
+                  
+                  {{form.media}}
+                  
+                </div>
+                <div class="row">
+                  <div class="col-md-auto"><input class="btn btn-success" type="submit" value="Показать"></div>
+                  </div>
+              </form> 
+              
+      </div> 
+            
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered border-dark" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                        <th class="border border-dark">Дата</th>
+                        <th class="border border-dark">Предмет</th>
+                        <th class="border border-dark">Группа</th>
+                        <th class="border border-dark">Формат</th>
+                        <th class="border border-dark">Тема</th>
+                        <th class="border border-dark"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for a in lesson_list %}
+                    <tr class="border border-dark">
+                        <td class="border border-dark">{{ a.date }}</td>
+                        <td class="border border-dark"><a href="{% url 't_subjects' %}?group_and_subject={{ group_and_subject|index:forloop.counter0|index:0|get_set }}&teacher={{ a.id_teacher.id }}&type=&period={{ a.period.id }}" role="button" target="_blank">{{ a.id_subject }}</a></td>
+                        <td class="border border-dark">{{ a.id_group }}</td>
+                        <td class="border border-dark">{{ a.type }}</td>
+                        <td class="border border-dark">{{ a.topic }}</td>
+                        
+                        <td class="border border-dark">
+                          {% if a.status %} 
+                          <a class="btn btn-secondary" href="{% url 'edit_att' a.id %}" role="button" target="_blank">Редактировать</a>
+                          {% else %} 
+                          <a class="btn btn-secondary" href="{% url 'create_att' a.id %}" role="button" target="_blank">Создать</a>
+                          {% endif %}
+                        </td>
+                        
+                    </tr>
+                    
+                    {% endfor %}
+
+                  </tbody>
+                </table>
+              </div>
+        </div>
+    
+{% endblock %}

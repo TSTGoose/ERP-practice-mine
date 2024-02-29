@@ -1,0 +1,51 @@
+{% extends 'info/base.html' %}
+{% load custom_tags %}
+    {% block content %}  
+                
+<div class="card mb-3">
+    <form class="form" role="form" method="GET" action="{% url 'list_group' %}">
+        {% csrf_token %}
+        <div class="row">
+            {% for f in form %}
+            <div class="col-md-auto"><label for="{{f.id_for_label}}">{{ f.label }}: </label> {{ f }}</div>
+            <div class="col-md-auto form-error">{{ f.errors }}</div>
+            {% endfor %}
+            {{form.media}}
+        </div>
+        <div class="row">
+            <div class="col-md-auto"><input class="btn btn-success" type="submit" value="Показать"></div>
+        </div>
+    </form>
+</div>
+<div class="card-body">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        <p>Группа: {{group}}</p>
+        {% if group.id %}
+        <a href="{% url 'list_group_create' group.id %}" class="btn btn-success btn-lg dump">Скачать список группы</a>
+        {% endif %}
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-condensed ">
+            <thead>
+                <tr>
+                    <th class="border border-dark" style="max-width: 5px; width: 5px; text-align: center">№</th>
+                    <th class="border border-dark" style="width: 10px; text-align: center">Студент</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stud in student %}
+                <tr>
+                    <td class="border border-dark" style="max-width: 5px; width: 5px; text-align: center">{{ forloop.counter }} </td>
+                    <td class="border border-dark" style="min-width: 160px; width: 160px; text-align: center">{{ stud }}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+       
+
+    
+
+{% endblock %}

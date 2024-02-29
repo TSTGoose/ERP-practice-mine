@@ -1,0 +1,53 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+
+
+
+
+{% block title %}{% trans "Edit Profile" %}{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    {% if user.id == school.user.id %}
+    <form method="post" action="">
+        <div class="form-group">
+        {% csrf_token %}
+        
+                                
+                                
+            {% for f in form %}
+            
+            
+            
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="{{f.id_for_label}}">{{ f.label }} </label>
+                <div >{{ f }}</div> 
+                <ul class="errorlist">{% for error in f.errors %}
+                    <li style="color: #f30909;"><b>{{error}}</b></li>
+                    {% endfor %}</ul>
+                
+                <p class="help">{{ f.help_text|safe }}</p>
+            </div> 
+            
+          
+            
+            {% endfor %}
+            
+            
+            {{form.media}}
+            
+            
+        <input type="submit" value="{% trans 'Submit' %}" />
+        </div>
+    </form>
+    
+    {% else %}
+    Вы не можете редактировать чужой профиль
+    {% endif %}
+    {% else %}
+    Вы не авторизированы
+    {% endif %}
+    
+    {% endblock %}
+
+

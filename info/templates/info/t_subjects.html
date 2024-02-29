@@ -1,0 +1,96 @@
+{% extends 'info/base.html' %}
+{% load custom_tags %}
+{% load static %}
+    {% block content %}  
+    {{ form.media.css }}              
+    <div class="card mb-3">       
+                
+                        
+                        <form class="form" role="form" method="GET" action="{% url 't_subjects' %}">
+                            {% csrf_token %}
+                            <div class="row">
+                            
+                            
+                            {% for f in form %}
+                            {% if request.user.is_teacher and f.id_for_label != 'id_teacher' %}
+                            <div class="col-md-auto"><label for="{{f.id_for_label}}">{{ f.label }}: </label> {{ f }}
+                            <span>{{ f.errors }}</span>
+                            </div>
+                            {% endif %}
+                            
+                            {% endfor %}
+                            
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                            {{ form.media.js }}
+                            {{ formfilter.media.js }} 
+                            
+                            </div>
+                            <div class="row">
+                            <div class="col-md-auto"><input class="btn btn-success" type="submit" value="Показать"></div>
+                            </div>
+                        </form> 
+                    
+                </div>
+
+                
+                <div class="card-body">
+                    <div class="card-header">
+                        <i class="fas fa-table"></i>
+                        
+                        {% include "info/inst_att_status.html" %}
+                      </div> 
+                    <div class="table-responsive">
+                      <table class="table table-bordered table-hover table-condensed ">
+                            <thead>
+                                <tr class="border border-dark">
+                                    <th class="border border-dark" style="width: 10px; text-align: center">№</th>
+                                    <th class="border border-dark" style="width: 10px; text-align: center">Студент</th>
+                                    <th class="border border-dark" style="min-width: 160px; width: 160px; text-align: center">Всего/П/Н/О/ЧП</th>
+                                    {% for i in lessons_name %}
+                                    <th class="border border-dark" style="min-width: 5px; width: 5px; text-align: center; font-size: small;">
+                                        <p>{{i.date2}}</p> 
+                                        <p>{{i.type}}</p>
+                                        {% if i.status == True %}    
+                                        <a href="{% url 'edit_att' i.id_lesson%}" target="_blank">изменить</a>
+                                        {% else %}
+                                        <a href="{% url 't_create_lesson' i.id group i.date%}" target="_blank">создать</a>
+                                        {% endif %}
+                                    </th>
+                                    
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                                <tbody>
+                                {% for i in time_slots %}
+                                <tr class="border border-dark">
+                                    {% for j in i %}
+                                        {% if forloop.counter == 1 %}
+                                            <td class="border border-dark"><b>{{ j }}</b></td>
+                                        {% elif forloop.counter == 2 %}
+                                        {{lessons_name.1.id_lesson.period.id}}
+                                            <td class="border border-dark" style="min-width: 300px"><a href="{% url 't_stat_student' %}?student={{j.id}}&type=&period={{ period }}" role="button" target="_blank">{{ j }}</a></td>
+                                        {% elif forloop.counter == 3 %}
+                                            <td class="border border-dark" style="min-width: 160px; width: 160px; text-align: center">{{ j }}</td>
+                                        
+                                        {% else %}
+                                        
+                                            <td class="border border-dark">{{ j }} </td>
+                                                {% endif %}
+                                                
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        
+
+
+                     
+                
+            </div>
+        </div>
+
+
+    
+
+    {% endblock %}

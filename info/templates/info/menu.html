@@ -1,0 +1,35 @@
+
+            {% if request.user.is_teacher %}
+          
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item {% if url_name == 't_timetable' %}active{% endif %}" href="{% url 't_timetable' request.user.teacher.id_teacher %}">Расписание</a></li>
+              <li><a class="dropdown-item {% if url_name == 't_subjects' %}active{% endif %}" href="{% url 't_subjects'  %}">Предметы</a></li>
+              <li><a class="dropdown-item {% if url_name == 't_stat_student' %}active{% endif %}" href="{% url 't_stat_student' %}">Статистика студента</a></li>
+              <li><a class="dropdown-item {% if url_name == 't_stat_group' %}active{% endif %}" href="{% url 't_stat_group' %}">Статистика группы</a></li>
+              <li><a class="dropdown-item {% if url_name == 't_lesson_date' %}active{% endif %}" href="{% url 't_lesson_date' request.user.teacher.id_teacher %}">Список Занятий</a></li>
+              <li><a class="dropdown-item {% if url_name == 'list_group' %}active{% endif %}" href="{% url 'list_group' %}">Список Группы</a></li>
+              <li><a class="dropdown-item {% if url_name == 'instruc' %}active{% endif %}" href="{% url 'instruc' %}">Инструкция</a></li>
+            </ul>
+          
+          {% elif request.user.is_staf %}
+          
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item {% if url_name == 'all_subjects' %}active{% endif %}" href="{% url 'all_subjects'  %}">Все Предметы</a></li>
+              <li><a class="dropdown-item {% if url_name == 'all_stat' %}active{% endif %}" href="{% url 'all_stat' %}">Статистика студента</a></li>
+              <li><a class="dropdown-item {% if url_name == 'all_att' %}active{% endif %}" href="{%  url 'all_att' %}">Все Занятия</a></li>
+              <li><a class="dropdown-item {% if url_name == 'add_subjects' %}active{% endif %}" href="{% url 'add_subjects' %}">Добавить перезачтенный предмет</a></li>
+              
+            </ul>
+          
+          {% elif request.user.is_sudent %}
+          
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item {% if url_name == 's_timetable' %}active{% endif %}" href="{% url 's_timetable' request.user.student.id_group.id_group_rasp %}">Расписание</a></li>
+              <li><a class="dropdown-item {% if url_name == 'instruc' %}active{% endif %}" href="{% url 'instruc' %}">Инструкция</a></li>
+              
+            </ul>
+          
+          {% endif %}
+            
+          
+        

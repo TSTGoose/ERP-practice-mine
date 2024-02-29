@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Домашняя страница</title>
+      {% load static %}
+
+     <!-- Bootstrap core CSS-->
+    
+     <link href="{% static '/info/bootstrap/vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+     <!-- Custom fonts for this template-->
+     <link href="{% static '/info/bootstrap/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+     <link rel="shortcut icon" href="{% static '/info/images/favicon.png' %}"/>
+     <!-- Page level plugin CSS-->
+     
+     {% load bootstrap5 %}
+
+     {# Load CSS and JavaScript #}
+     {% bootstrap_css %}
+     {% bootstrap_javascript %}
+     
+     {# Display django.contrib.messages as Bootstrap alerts #}
+     {% bootstrap_messages %}
+
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    
+        {% include "info/homepage_menu.html" %}
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Jumbotron Header -->
+      <header class="jumbotron my-4">
+        <h1 class="text-start">Здравствуйте, {{ request.user.teacher }}</h1>
+        <h2>Настоятельно рекомендуется сменить пароль от личного кабинета</h2>
+        
+      </header>
+      <!-- Page Features -->
+      <div class="row text-center">
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+              <a href="{% url 't_timetable' request.user.teacher.id_teacher %}">
+                <img class="card-img-top" src="{% static 'info/images/timetable.png' %}" alt="">
+              </a>
+              <div class="card-body">
+              <h4 class="card-title">Расписание {{date}}</h4>
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" role="button" href="{% url 't_timetable' request.user.teacher.id_teacher %}">Открыть</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+              <a href="{% url 't_subjects' %}">
+                <img class="card-img-top" src="{% static 'info/images/attendance2.jpg' %}" alt="">
+              </a>
+              <div class="card-body">
+              <h4 class="card-title">Список Предметов</h4>
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" role="button" href="{% url 't_subjects' %}">Открыть</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+              <a href="{% url 't_stat_student' %}">
+                <img class="card-img-top" src="{% static 'info/images/reports.png' %}" alt="">
+              </a>
+              <div class="card-body">
+              <h4 class="card-title">Статистика студента</h4>
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" role="button" href="{% url 't_stat_student' %}">Открыть</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+              <a href="{% url 'instruc' %}">
+                <img class="card-img-top" src="{% static 'info/images/instruc.png' %}" alt="">
+              </a>
+              <div class="card-body">
+              <h4 class="card-title">Инструкция</h4>
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" role="button" href="{% url 'instruc' %}">Открыть</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Хотите выйти?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Выберите «Выйти» ниже, если вы готовы завершить текущий сеанс.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Отмена</button>
+            <a class="btn btn-primary" href="/accounts/logout">Выйти</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static '/info/bootstrap/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/info/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static '/info/bootstrap/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static '/info/bootstrap/js/sb-admin.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'autocomplete_light/autocomplete_light.js' %}"></script>
+	  <script type="text/javascript" src="{% static 'autocomplete_light/select2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'smart-selects/admin/js/chainedfk.js' %}"></script>
+    <script type="text/javascript" src="{% static 'smart-selects/admin/js/bindfields.js' %}"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,652 @@
+[][
+    {
+        "fio": "Ходус Денис Геннадьевич",
+        "group": "Д-543",
+        "login": "d543dghodus",
+        "password": "d543dghodus@"
+    },
+    {
+        "fio": "Лаврентьев Владислав Анатольевич",
+        "group": "Д-543",
+        "login": "d543valavrentev",
+        "password": "d543valavrentev@"
+    },
+    {
+        "fio": "Железнов Иван Сергеевич",
+        "group": "Д-553",
+        "login": "d553iszheleznov",
+        "password": "d553iszheleznov@"
+    },
+    {
+        "fio": "Кондраков Сергей Михайлович",
+        "group": "Д-553",
+        "login": "d553smkondrakov",
+        "password": "d553smkondrakov@"
+    },
+    {
+        "fio": "Бакилин Дмитрий Владимирович",
+        "group": "Д-553",
+        "login": "d553dvbakilin",
+        "password": "d553dvbakilin@"
+    },
+    {
+        "fio": "Жданова Оксана Валерьевна",
+        "group": "Д-513",
+        "login": "d513ovzhdanova",
+        "password": "d513ovzhdanova@"
+    },
+    {
+        "fio": "Илекис Вацловас Михайлович",
+        "group": "Д-513",
+        "login": "d513vmilekis",
+        "password": "d513vmilekis@"
+    },
+    {
+        "fio": "Елфимов Александр Алексеевич",
+        "group": "Д-673",
+        "login": "d673aaelfimov",
+        "password": "d673aaelfimov@"
+    },
+    {
+        "fio": "Сыркин Георгий Николаевич",
+        "group": "Д-673",
+        "login": "d673gnsyrkin",
+        "password": "d673gnsyrkin@"
+    },
+    {
+        "fio": "Ездаков Алексей Владимирович",
+        "group": "Д-673",
+        "login": "d673avezdakov",
+        "password": "d673avezdakov@"
+    },
+    {
+        "fio": "Баранник Михаил Владимирович",
+        "group": "Д-673",
+        "login": "d673mvbarannik",
+        "password": "d673mvbarannik@"
+    },
+    {
+        "fio": "Морева Олеся Михайловна",
+        "group": "Д-673",
+        "login": "d673ommoreva",
+        "password": "d673ommoreva@"
+    },
+    {
+        "fio": "Белинский Вячеслав Витальевич",
+        "group": "Д-673",
+        "login": "d673vvbelinskij",
+        "password": "d673vvbelinskij@"
+    },
+    {
+        "fio": "Брень Александр Анатольевич",
+        "group": "Д-673",
+        "login": "d673aabren",
+        "password": "d673aabren@"
+    },
+    {
+        "fio": "Семенов Антон Юрьевич",
+        "group": "Д-673",
+        "login": "d673ajusemenov",
+        "password": "d673ajusemenov@"
+    },
+    {
+        "fio": "Санников Павел Александрович",
+        "group": "Д-673",
+        "login": "d673pasannikov",
+        "password": "d673pasannikov@"
+    },
+    {
+        "fio": "Милюченко Анна Дмитриевна",
+        "group": "Д-143",
+        "login": "d143admiljuchenko",
+        "password": "d143admiljuchenko@"
+    },
+    {
+        "fio": "Сарапова Степанида Юрьевна",
+        "group": "Д-143",
+        "login": "d143sjusarapova",
+        "password": "d143sjusarapova@"
+    },
+    {
+        "fio": "Скрыпникова Елизавета Анатольевна",
+        "group": "Д-143",
+        "login": "d143easkrypnikova",
+        "password": "d143easkrypnikova@"
+    },
+    {
+        "fio": "Маевский Эдуард Станиславович",
+        "group": "Д-143",
+        "login": "d143esmaevskij",
+        "password": "d143esmaevskij@"
+    },
+    {
+        "fio": "Трубицина Яна Павловна",
+        "group": "Д-143",
+        "login": "d143japtrubitsina",
+        "password": "d143japtrubitsina@"
+    },
+    {
+        "fio": "Матвейчук Роман Денисович",
+        "group": "Д-143",
+        "login": "d143rdmatvejchuk",
+        "password": "d143rdmatvejchuk@"
+    },
+    {
+        "fio": "Дешина Яна Владиславовна",
+        "group": "Д-273",
+        "login": "d273javdeshina",
+        "password": "d273javdeshina@"
+    },
+    {
+        "fio": "Немировский Илья Денисович",
+        "group": "Д-273",
+        "login": "d273idnemirovskij",
+        "password": "d273idnemirovskij@"
+    },
+    {
+        "fio": "Файзулин Айдар Данирович",
+        "group": "Д-273",
+        "login": "d273adfajzulin",
+        "password": "d273adfajzulin@"
+    },
+    {
+        "fio": "Шех Полина Максимовна",
+        "group": "Д-273",
+        "login": "d273pmsheh",
+        "password": "d273pmsheh@"
+    },
+    {
+        "fio": "Стаценко Артём Максимович",
+        "group": "Д-273",
+        "login": "d273amstatsenko",
+        "password": "d273amstatsenko@"
+    },
+    {
+        "fio": "Лисовский Денис Александрович",
+        "group": "Д-273",
+        "login": "d273dalisovskij",
+        "password": "d273dalisovskij@"
+    },
+    {
+        "fio": "Хисматулин Дмитрий Алексеевич",
+        "group": "Д-273",
+        "login": "d273dahismatulin",
+        "password": "d273dahismatulin@"
+    },
+    {
+        "fio": "Сивин Андрей Олегович",
+        "group": "Д-263",
+        "login": "d263aosivin",
+        "password": "d263aosivin@"
+    },
+    {
+        "fio": "Трофимов Данила Сергеевич",
+        "group": "Д-263",
+        "login": "d263dstrofimov",
+        "password": "d263dstrofimov@"
+    },
+    {
+        "fio": "Мейран Аслан Ибрагимович",
+        "group": "Д-263",
+        "login": "d263aimejran",
+        "password": "d263aimejran@"
+    },
+    {
+        "fio": "Калашников Данила Евгеньевич",
+        "group": "Д-263",
+        "login": "d263dekalashnikov",
+        "password": "d263dekalashnikov@"
+    },
+    {
+        "fio": "Кушнир Константин Вячеславович",
+        "group": "Д-263",
+        "login": "d263kvkushnir",
+        "password": "d263kvkushnir@"
+    },
+    {
+        "fio": "Динмухаметов Теймур Маратович",
+        "group": "Д-263",
+        "login": "d263tmdinmuhametov",
+        "password": "d263tmdinmuhametov@"
+    },
+    {
+        "fio": "Ковальчук Александр Алексеевич",
+        "group": "Д-263",
+        "login": "d263aakovalchuk",
+        "password": "d263aakovalchuk@"
+    },
+    {
+        "fio": "Батурин Виктор Павлович",
+        "group": "Д-263",
+        "login": "d263vpbaturin",
+        "password": "d263vpbaturin@"
+    },
+    {
+        "fio": "Гусаковская Екатерина Денисовна",
+        "group": "Д-263",
+        "login": "d263edgusakovskaja",
+        "password": "d263edgusakovskaja@"
+    },
+    {
+        "fio": "Ермолаева София Сергеевна",
+        "group": "Д-263",
+        "login": "d263ssermolaeva",
+        "password": "d263ssermolaeva@"
+    },
+    {
+        "fio": "Тимонов Егор Юрьевич",
+        "group": "Д-263",
+        "login": "d263ejutimonov",
+        "password": "d263ejutimonov@"
+    },
+    {
+        "fio": "Данильченко Кирилл Владимирович",
+        "group": "Д-263",
+        "login": "d263kvdanilchenko",
+        "password": "d263kvdanilchenko@"
+    },
+    {
+        "fio": "Дюгаев Степан Евгеньевич",
+        "group": "Д-263",
+        "login": "d263sedjugaev",
+        "password": "d263sedjugaev@"
+    },
+    {
+        "fio": "Макаров Данила Антонович",
+        "group": "Д-263",
+        "login": "d263damakarov",
+        "password": "d263damakarov@"
+    },
+    {
+        "fio": "Ткачук Степан Романович",
+        "group": "Д-153",
+        "login": "d153srtkachuk",
+        "password": "d153srtkachuk@"
+    },
+    {
+        "fio": "Гридневский Кирилл Игоревич",
+        "group": "Д-153",
+        "login": "d153kigridnevskij",
+        "password": "d153kigridnevskij@"
+    },
+    {
+        "fio": "Смирнов Максим Алексеевич",
+        "group": "Д-153",
+        "login": "d153masmirnov",
+        "password": "d153masmirnov@"
+    },
+    {
+        "fio": "Воронин Семён Юрьевич",
+        "group": "Д-153",
+        "login": "d153sjuvoronin",
+        "password": "d153sjuvoronin@"
+    },
+    {
+        "fio": "Купри Арсентий Андреевич",
+        "group": "Д-153",
+        "login": "d153aakupri",
+        "password": "d153aakupri@"
+    },
+    {
+        "fio": "Хахалев Максим Станиславович",
+        "group": "Д-153",
+        "login": "d153mshahalev",
+        "password": "d153mshahalev@"
+    },
+    {
+        "fio": "Сорокин Роман Игоревич",
+        "group": "Д-153",
+        "login": "d153risorokin",
+        "password": "d153risorokin@"
+    },
+    {
+        "fio": "Жабина Алина Михайловна",
+        "group": "Д-153",
+        "login": "d153amzhabina",
+        "password": "d153amzhabina@"
+    },
+    {
+        "fio": "Пытин Александр Олегович",
+        "group": "Д-153",
+        "login": "d153aopytin",
+        "password": "d153aopytin@"
+    },
+    {
+        "fio": "Серебряков Алексей Витальевич",
+        "group": "Д-153",
+        "login": "d153avserebrjakov",
+        "password": "d153avserebrjakov@"
+    },
+    {
+        "fio": "Лаптев Павел Владимирович",
+        "group": "Д-153",
+        "login": "d153pvlaptev",
+        "password": "d153pvlaptev@"
+    },
+    {
+        "fio": "Жданов Геннадий Константинович",
+        "group": "Д-153",
+        "login": "d153gkzhdanov",
+        "password": "d153gkzhdanov@"
+    },
+    {
+        "fio": "Орловский Александр Евгеньевич",
+        "group": "Д-153",
+        "login": "d153aeorlovskij",
+        "password": "d153aeorlovskij@"
+    },
+    {
+        "fio": "Глушков Илья Эдуардович",
+        "group": "Д-233",
+        "login": "d233ieglushkov",
+        "password": "d233ieglushkov@"
+    },
+    {
+        "fio": "Уласюк Дамир Игоревич",
+        "group": "Д-233",
+        "login": "d233diulasjuk",
+        "password": "d233diulasjuk@"
+    },
+    {
+        "fio": "Силицкий Анатолий Максимович",
+        "group": "Д-233",
+        "login": "d233amsilitskij",
+        "password": "d233amsilitskij@"
+    },
+    {
+        "fio": "Хацкалев Евгений Артёмович",
+        "group": "Д-233",
+        "login": "d233eahatskalev",
+        "password": "d233eahatskalev@"
+    },
+    {
+        "fio": "Козиков Роман Владимирович",
+        "group": "Д-233",
+        "login": "d233rvkozikov",
+        "password": "d233rvkozikov@"
+    },
+    {
+        "fio": "Липатин Кирилл Валентинович",
+        "group": "Д-233",
+        "login": "d233kvlipatin",
+        "password": "d233kvlipatin@"
+    },
+    {
+        "fio": "Еременко Анжелика Олеговна",
+        "group": "Д-233",
+        "login": "d233aoeremenko",
+        "password": "d233aoeremenko@"
+    },
+    {
+        "fio": "Васильев Денис Дмитриевич",
+        "group": "Д-233",
+        "login": "d233ddvasilev",
+        "password": "d233ddvasilev@"
+    },
+    {
+        "fio": "Бондарев Андрей Евгеньевич",
+        "group": "Д-233",
+        "login": "d233aebondarev",
+        "password": "d233aebondarev@"
+    },
+    {
+        "fio": "Маркин Артём Владимирович",
+        "group": "Д-233",
+        "login": "d233avmarkin",
+        "password": "d233avmarkin@"
+    },
+    {
+        "fio": "Кобзова Анастасия Сергеевна",
+        "group": "Д-233",
+        "login": "d233askobzova",
+        "password": "d233askobzova@"
+    },
+    {
+        "fio": "Жиров Дмитрий Андреевич",
+        "group": "Д-233",
+        "login": "d233dazhirov",
+        "password": "d233dazhirov@"
+    },
+    {
+        "fio": "Попадейкин Артем Игоревич",
+        "group": "Д-233",
+        "login": "d233aipopadejkin",
+        "password": "d233aipopadejkin@"
+    },
+    {
+        "fio": "Закутинский Вадим Андреевич",
+        "group": "Д-142",
+        "login": "d142vazakutinskij",
+        "password": "d142vazakutinskij@"
+    },
+    {
+        "fio": "Площинская Елена Евгеньевна",
+        "group": "Д-142",
+        "login": "d142eeploschinskaja",
+        "password": "d142eeploschinskaja@"
+    }
+][
+    {
+        "fio": "Довгополюк Никита Михайлович",
+        "group": "В-463",
+        "login": "v463nmdovgopoljuk",
+        "password": "v463nmdovgopoljuk@"
+    },
+    {
+        "fio": "Лямаев Руслан Эдуардович",
+        "group": "В-463",
+        "login": "v463reljamaev",
+        "password": "v463reljamaev@"
+    },
+    {
+        "fio": "Гордымов Евгений Александрович",
+        "group": "В-463",
+        "login": "v463eagordymov",
+        "password": "v463eagordymov@"
+    },
+    {
+        "fio": "Молотов Илья Сергеевич",
+        "group": "В-463",
+        "login": "v463ismolotov",
+        "password": "v463ismolotov@"
+    },
+    {
+        "fio": "Мартюгов Евгений Павлович",
+        "group": "В-463",
+        "login": "v463epmartjugov",
+        "password": "v463epmartjugov@"
+    },
+    {
+        "fio": "Фунтовой Данила Вадимович",
+        "group": "В-463",
+        "login": "v463dvfuntovoj",
+        "password": "v463dvfuntovoj@"
+    },
+    {
+        "fio": "Кириллов Илья Алексеевич",
+        "group": "В-463",
+        "login": "v463iakirillov",
+        "password": "v463iakirillov@"
+    },
+    {
+        "fio": "Трофимчук Дмитрий Олегович",
+        "group": "В-463",
+        "login": "v463dotrofimchuk",
+        "password": "v463dotrofimchuk@"
+    },
+    {
+        "fio": "Юкляевский Кирилл Станиславович",
+        "group": "В-463",
+        "login": "v463ksjukljaevskij",
+        "password": "v463ksjukljaevskij@"
+    },
+    {
+        "fio": "Лысков Александр Сергеевич",
+        "group": "В-463",
+        "login": "v463aslyskov",
+        "password": "v463aslyskov@"
+    },
+    {
+        "fio": "Зиновьев Дмитрий Витальевич",
+        "group": "В-463",
+        "login": "v463dvzinovev",
+        "password": "v463dvzinovev@"
+    },
+    {
+        "fio": "Трудоношин Антон Константинович",
+        "group": "В-463",
+        "login": "v463aktrudonoshin",
+        "password": "v463aktrudonoshin@"
+    },
+    {
+        "fio": "Якимова Мелисса Сергеевна",
+        "group": "В-473",
+        "login": "v473msjakimova",
+        "password": "v473msjakimova@"
+    },
+    {
+        "fio": "Тимофеев Сергей Валерьевич",
+        "group": "В-473",
+        "login": "v473svtimofeev",
+        "password": "v473svtimofeev@"
+    },
+    {
+        "fio": "Чикова Алина Сергеевна",
+        "group": "В-473",
+        "login": "v473aschikova",
+        "password": "v473aschikova@"
+    },
+    {
+        "fio": "Кузнецова Дарья Николаевна",
+        "group": "В-473",
+        "login": "v473dnkuznetsova",
+        "password": "v473dnkuznetsova@"
+    },
+    {
+        "fio": "Копасов Александр Владимирович",
+        "group": "В-473",
+        "login": "v473avkopasov",
+        "password": "v473avkopasov@"
+    },
+    {
+        "fio": "Болтовская Екатерина Юрьевна",
+        "group": "В-473",
+        "login": "v473ejuboltovskaja",
+        "password": "v473ejuboltovskaja@"
+    },
+    {
+        "fio": "Теущаков Егор Александрович",
+        "group": "В-433",
+        "login": "v433eateuschakov",
+        "password": "v433eateuschakov@"
+    },
+    {
+        "fio": "Видяев Антон Леонидович",
+        "group": "В-433",
+        "login": "v433alvidjaev",
+        "password": "v433alvidjaev@"
+    },
+    {
+        "fio": "Осипова Алёна Игоревна",
+        "group": "В-433",
+        "login": "v433aiosipova",
+        "password": "v433aiosipova@"
+    },
+    {
+        "fio": "Коробейников Алексей Антонович",
+        "group": "В-433",
+        "login": "v433aakorobejnikov",
+        "password": "v433aakorobejnikov@"
+    },
+    {
+        "fio": "Чернышев Сергей Игоревич",
+        "group": "В-433",
+        "login": "v433sichernyshev",
+        "password": "v433sichernyshev@"
+    },
+    {
+        "fio": "Калабин Александр Александрович",
+        "group": "В-433",
+        "login": "v433aakalabin",
+        "password": "v433aakalabin@"
+    },
+    {
+        "fio": "Архипов Иван Александрович",
+        "group": "В-433",
+        "login": "v433iaarhipov",
+        "password": "v433iaarhipov@"
+    },
+    {
+        "fio": "Ярославцев Василий Максимович",
+        "group": "В-433",
+        "login": "v433vmjaroslavtsev",
+        "password": "v433vmjaroslavtsev@"
+    },
+    {
+        "fio": "Виноградов Юрий Сергеевич",
+        "group": "В-470",
+        "login": "v470jusvinogradov",
+        "password": "v470jusvinogradov@"
+    },
+    {
+        "fio": "Новиков Кирилл Сергеевич",
+        "group": "В-431",
+        "login": "v431ksnovikov",
+        "password": "v431ksnovikov@"
+    },
+    {
+        "fio": "Грибов Никита Львович",
+        "group": "В-452",
+        "login": "v452nlgribov",
+        "password": "v452nlgribov@"
+    },
+    {
+        "fio": "Белый Кирилл Сергеевич",
+        "group": "В-432",
+        "login": "v432ksbelyj",
+        "password": "v432ksbelyj@"
+    },
+    {
+        "fio": "Воронцов Денис Владимирович",
+        "group": "В-432",
+        "login": "v432dvvorontsov",
+        "password": "v432dvvorontsov@"
+    },
+    {
+        "fio": "Татарникова Юлия Михайловна",
+        "group": "Д-540",
+        "login": "d540jumtatarnikova",
+        "password": "d540jumtatarnikova@"
+    }
+][
+    {
+        "fio": "Шевцов Денис Александрович",
+        "group": "В-439",
+        "login": "v439dashevtsov",
+        "password": "v439dashevtsov@"
+    },
+    {
+        "fio": "Абрамов Дмитрий Евгеньевич",
+        "group": "Д-279",
+        "login": "d279deabramov",
+        "password": "d279deabramov@"
+    },
+    {
+        "fio": "Бровкин Андрей Сергеевич",
+        "group": "Д-262",
+        "login": "d262asbrovkin",
+        "password": "d262asbrovkin@"
+    },
+    {
+        "fio": "Добшинская Виктория Игоревна",
+        "group": "Д-263",
+        "login": "d263vidobshinskaja",
+        "password": "d263vidobshinskaja@"
+    },
+    {
+        "fio": "Мануйлов Владимир Иванович",
+        "group": "Д-233",
+        "login": "d233vimanujlov",
+        "password": "d233vimanujlov@"
+    }
+][]

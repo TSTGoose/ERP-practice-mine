@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <link rel="shortcut icon" href="{% static '/info/images/favicon.png' %}"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% endblock %}</title>
+      
+
+    <!-- Bootstrap core CSS-->
+    
+    <link href="{% static '/info/bootstrap/vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    
+    <link rel="shortcut icon" href="{% static '/info/images/favicon.png' %}"/>
+    <!-- Page level plugin CSS-->
+    <!-- Custom scripts for all pages-->
+  
+    
+	  
+    <!-- <script type="text/javascript" src="{% static 'smart-selects/admin/js/chainedfk.js' %}"></script>
+      <script src="{% static '/info/bootstrap/js/sb-admin.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'autocomplete_light/autocomplete_light.js' %}"></script>
+      <script type="text/javascript" src="{% static 'autocomplete_light/select2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'smart-selects/admin/js/bindfields.js' %}"></script>-->
+    <script
+        src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.js"></script>
+    
+    {% load bootstrap5 %}
+
+      {# Load CSS and JavaScript #}
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+      
+      {# Display django.contrib.messages as Bootstrap alerts #}
+      {% bootstrap_messages %}
+
+
+      {% block css %}
+      {% endblock %}
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+      
+        <a class="navbar-brand" href="{% url 'index' %}">СТИ НИЯУ МИФИ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <!-- Navbar -->
+      
+      {% with url_name=request.resolver_match.url_name %}
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'index' %}">
+                <span>Главная страница</span>
+              </a>
+
+            
+            </li>
+            {% if user.is_authenticated %}
+            {% if request.user.is_teacher and request.user.is_staf %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Преподаватель
+              </a>
+              {% include "info/menu.html" %}
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Управляющий
+              </a>
+              {% include "info/s_menu.html" %}
+            </li>
+            
+            
+            {% elif request.user.is_teacher %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Преподаватель
+              </a>
+              {% include "info/menu.html" %}
+            </li>
+            
+            
+            
+            {% elif request.user.is_staf %}
+            
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'all_att' %}active{% endif %}" href="{% url 'all_att' %}">
+                <span>Все Занятия</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'all_subjects' %}active{% endif %}" href="{% url 'all_subjects' %}">
+                <span>Все Предметы</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'all_stat' %}active{% endif %}" href="{% url 'all_stat' %}">
+                <span>Статистика студента</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'all_stat_group' %}active{% endif %}" href="{% url 'all_stat_group' %}">
+                <span>Статистика группы</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'add_subjects' %}active{% endif %}" href="{% url 'add_subjects' %}">
+                <span>Добавить перезачтенный предмет</span>
+              </a>
+            </li>
+            
+            {% elif request.user.is_student %}
+            
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 's_timetable' %}active{% endif %}" href="{% url 's_timetable' request.user.student.id_group.id_group_rasp %}">
+                <span>Расписание</span>
+              </a>
+            </li>
+            
+
+        {% endif %}
+        {% if request.user.sish  %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                СИШ
+              </a>
+              {% include "info/school_menu.html" %}
+            </li>
+            {% endif %}
+        {% endif %}
+          </ul>
+
+
+        
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                {% if request.user.is_student %}
+                    <a class="nav-link text-capitalize">{{ request.user.student }}</a>
+                {% elif request.user.is_teacher %}
+                    <a class="nav-link text-capitalize">{{ request.user.teacher }}</a>
+                {% elif request.user.is_staf %}
+                    <a class="nav-link text-capitalize">{{ request.user.staf }}</a>
+                {% endif %}
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'password_change' %}">Сменить пароль</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Выйти</a>
+            {% endif %}  
+          </li>
+          </ul>
+
+
+        
+        </div>
+      
+    </nav>
+    
+    {% endwith %}
+    
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <!-- Breadcrumbs-->
+{#          <ol class="breadcrumb">#}
+{#            <li class="breadcrumb-item">#}
+{#              <a href="index.html">Dashboard</a>#}
+{#            </li>#}
+{#            <li class="breadcrumb-item active">Blank Page</li>#}
+{#          </ol>#}
+
+          <!-- Page Content -->
+            {% block content %}
+            {% endblock %}
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+{#        <footer class="sticky-footer">#}
+{#          <div class="container my-auto">#}
+{#            <div class="copyright text-center my-auto">#}
+{#              <span></span>#}
+{#            </div>#}
+{#          </div>#}
+{#        </footer>#}
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Хотите выйти?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Выберите «Выйти» ниже, если вы готовы завершить текущий сеанс.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Отмена</button>
+            <a class="btn btn-primary" href="/accounts/logout">Выйти</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <!-- Bootstrap core JavaScript-->
+    
+
+    <!-- Core plugin JavaScript-->
+    
+
+    
+    
+    
+   {% block scripts %}
+    {% endblock %}
+  </body>
+
+</html>

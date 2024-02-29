@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{%if key_s%}
+<b>Предмет: {{key_s}}, Группа: {{value_s.0.group}}, Преподаватели:  {% for teach in value_s.0.teachers %} {{teach}}, {% endfor %} Всего занятий: {{ value_s|length }}, Отмечено: {{ count_subjects|get_item:key_s}}</b>
+{%elif lessons_name.1.subject%}
+<b>Предмет: {{lessons_name.1.subject}}, Группа: {{lessons_name.1.group}}</b>
+    {% if lessons_name.1.teachers %} 
+    <b></b>,Преподаватели: {% for teach in lessons_name.1.teachers %} {{teach}}, {% endfor %}</b>
+    {% endif %}
+{% endif %}
+<p> П - присутствовал; Н - не присутствовал; О - опоздал; ЧП - частично присутствовал; Х - не должен присутствовать на занятии (подгруппы на лабораторных)</p>

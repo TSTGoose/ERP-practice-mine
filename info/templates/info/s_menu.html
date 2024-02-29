@@ -1,0 +1,19 @@
+
+            
+          
+          {% if request.user.is_staf %}
+          
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item {% if url_name == 'all_subjects' %}active{% endif %}" href="{% url 'all_subjects'  %}">Все Предметы</a></li>
+              <li><a class="dropdown-item {% if url_name == 'all_stat' %}active{% endif %}" href="{% url 'all_stat' %}">Статистика студента</a></li>
+              <li><a class="dropdown-item {% if url_name == 'all_stat_group' %}active{% endif %}" href="{% url 'all_stat_group' %}">Статистика группы</a></li>
+              <li><a class="dropdown-item {% if url_name == 'all_att' %}active{% endif %}" href="{%  url 'all_att' %}">Все Занятия</a></li>
+              <li><a class="dropdown-item {% if url_name == 'add_subjects' %}active{% endif %}" href="{% url 'add_subjects' %}">Добавить перезачтенный предмет</a></li>
+              
+            </ul>
+      
+          
+          {% endif %}
+            
+          
+        

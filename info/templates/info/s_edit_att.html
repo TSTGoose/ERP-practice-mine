@@ -1,0 +1,107 @@
+{% extends 'info/base.html' %}
+{% block content %}
+
+<form action="{% url 's_confirm' id %}" method="post">
+            {% csrf_token %}
+    <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-table"></i>
+         <b id="edit">Занятие: {{lesson.id_subject}}, Группа: {{lesson.id_group}}, Дата: {{lesson.date}}{% if lesson.topic %}, Тема занятия: {{lesson.topic}} {% endif %}</b>
+         <!--<b>Изменил: {{lesson.changed_by}}, </b>-->
+         
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                    <th class="border border-dark" scope="col">#</th>
+                    <th class="border border-dark">Имя студента</th>
+                    <th class="border border-dark">{% include "info/inst_att_status.html" %}</th>
+                </tr>
+              </thead>
+              
+                <tbody>
+                  
+                    {% for att in att_list %}
+                    <tr>
+                    <th class="border border-dark" scope="row">{{forloop.counter}}</th>
+                    
+                    <td class="border border-dark">{{att.id_student}}</td>
+                    
+                    <td class="border border-dark">
+                      <div class="btn-group" role="group" aria-label="Базовая группа переключателей радио">
+
+                                {% if att.status.id == 1 %}
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option1{{ att.id_student.id_people }}" autocomplete="off" checked="" value="{{att_status.0.id}}">
+                                <label class="btn btn-outline-success " for="option1{{ att.id_student.id_people }}">{{att_status.0.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option2{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.1.id}}">
+                                <label class="btn btn-outline-danger" for="option2{{ att.id_student.id_people }}">{{att_status.1.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option3{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.2.id}}">
+                                <label class="btn btn-outline-warning " for="option3{{ att.id_student.id_people }}">{{att_status.2.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option4{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.3.id}}">
+                                <label class="btn btn-outline-info " for="option4{{ att.id_student.id_people }}">{{att_status.3.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option5{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.4.id}}">
+                                <label class="btn btn-outline-secondary " for="option5{{ att.id_student.id_people }}">{{att_status.4.short_name}}</label>
+                                {% elif att.status.id == 2 %}
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option1{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.0.id}}">
+                                <label class="btn btn-outline-success " for="option1{{ att.id_student.id_people }}">{{att_status.0.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option2{{ att.id_student.id_people }}" autocomplete="off" checked="" value="{{att_status.1.id}}">
+                                <label class="btn btn-outline-danger" for="option2{{ att.id_student.id_people }}">{{att_status.1.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option3{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.2.id}}">
+                                <label class="btn btn-outline-warning " for="option3{{ att.id_student.id_people }}">{{att_status.2.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option4{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.3.id}}">
+                                <label class="btn btn-outline-info " for="option4{{ att.id_student.id_people }}">{{att_status.3.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option5{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.4.id}}">
+                                <label class="btn btn-outline-secondary " for="option5{{ att.id_student.id_people }}">{{att_status.4.short_name}}</label>
+                                {% elif att.status.id == 3 %}
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option1{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.0.id}}">
+                                <label class="btn btn-outline-success " for="option1{{ att.id_student.id_people }}">{{att_status.0.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option2{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.1.id}}">
+                                <label class="btn btn-outline-danger" for="option2{{ att.id_student.id_people }}">{{att_status.1.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option3{{ att.id_student.id_people }}" autocomplete="off" checked="" value="{{att_status.2.id}}">
+                                <label class="btn btn-outline-warning " for="option3{{ att.id_student.id_people }}">{{att_status.2.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option4{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.3.id}}">
+                                <label class="btn btn-outline-info " for="option4{{ att.id_student.id_people }}">{{att_status.3.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option5{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.4.id}}">
+                                <label class="btn btn-outline-secondary " for="option5{{ att.id_student.id_people }}">{{att_status.4.short_name}}</label>
+                                {% elif att.status.id == 4 %}
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option1{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.0.id}}">
+                                <label class="btn btn-outline-success " for="option1{{ att.id_student.id_people }}">{{att_status.0.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option2{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.1.id}}">
+                                <label class="btn btn-outline-danger" for="option2{{ att.id_student.id_people }}">{{att_status.1.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option3{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.2.id}}">
+                                <label class="btn btn-outline-warning " for="option3{{ att.id_student.id_people }}">{{att_status.2.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option4{{ att.id_student.id_people }}" autocomplete="off" checked="" value="{{att_status.3.id}}">
+                                <label class="btn btn-outline-info " for="option4{{ att.id_student.id_people }}">{{att_status.3.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option5{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.4.id}}">
+                                <label class="btn btn-outline-secondary " for="option5{{ att.id_student.id_people }}">{{att_status.4.short_name}}</label>
+                                {% elif att.status.id == 5 %}
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option1{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.0.id}}">
+                                <label class="btn btn-outline-success " for="option1{{ att.id_student.id_people }}">{{att_status.0.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option2{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.1.id}}">
+                                <label class="btn btn-outline-danger" for="option2{{ att.id_student.id_people }}">{{att_status.1.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option3{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.2.id}}">
+                                <label class="btn btn-outline-warning " for="option3{{ att.id_student.id_people }}">{{att_status.2.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option4{{ att.id_student.id_people }}" autocomplete="off"  value="{{att_status.3.id}}">
+                                <label class="btn btn-outline-info " for="option4{{ att.id_student.id_people }}">{{att_status.3.short_name}}</label>
+                                <input type="radio" class="btn-check" name="{{ att.id_student.id_people }}" id="option5{{ att.id_student.id_people }}" autocomplete="off" checked="" value="{{att_status.4.id}}">
+                                <label class="btn btn-outline-secondary " for="option5{{ att.id_student.id_people }}">{{att_status.4.short_name}}</label>
+                                {% elif att.status.id == 7 %}
+                                <p>Перезачетено</p>
+                                {% endif %}
+                        </div>
+                    </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+    <input class="btn btn-success" type="submit" value="Сохранить">
+</form>
+
+{% endblock %}

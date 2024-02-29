@@ -1,0 +1,102 @@
+{% extends 'info/base.html' %}
+{% load custom_tags %}
+    {% block content %}  
+                
+    <div class="card mb-3">       
+                
+                        
+                        <form class="form" role="form" method="GET" action="{% url 'all_stat' %}">
+                            {% csrf_token %}
+                            <div class="row">
+                            
+                            
+                            {% for f in form %}
+                            
+                            <div class="col-md-auto"><label for="{{f.id_for_label}}">{{ f.label }}: </label> {{ f }}</div>
+                            <div class="col-md-auto form-error">{{ f.errors }}</div>
+                            
+                            
+                            {% endfor %}
+                            
+                            
+                            {{form.media}}
+                            
+                            </div>
+                            <div class="row">
+                            <div class="col-md-auto"><input class="btn btn-success" type="submit" value="Показать"></div>
+                            </div>
+                        </form> 
+                    
+                </div>
+
+                {% for key_s, value_s in lessons_name.items %}
+                
+                <div class="card-body">
+                    <div class="card-header">
+                        <i class="fas fa-table"></i>
+                        {% include "info/inst_att_status.html" %}
+                      </div> 
+                    <div class="table-responsive">
+                      <table class="table table-bordered table-hover table-condensed ">
+                            <thead>
+                                <tr>
+                                    <th class="border border-dark" style="width: 10px; text-align: center">№</th>
+                                    <th class="border border-dark" style="width: 10px; text-align: center">Студент</th>
+                                    <th class="border border-dark" style="min-width: 160px; width: 160px; text-align: center">Всего/П/Н/О/ЧП</th>
+                                    {% for j in value_s %}
+                                    
+                                    <th class="border border-dark" style="min-width: 5px; width: 5px; text-align: center; font-size: small;">
+                                        <p >{{j.date2}}</p> 
+                                        <p>{{j.type}}</p>
+                                        
+                                    </th>
+                                    
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                                <tbody>
+                                
+                                
+                                
+                                
+                                <tr>
+                                    {% for att in time_slots|get_item:key_s %}
+                                    {% for k in att %}
+                                        {% if forloop.counter == 1 %}
+                                            <td class="border border-dark"><b>{{ k }}</b></td>
+                                        {% elif forloop.counter == 2 %}
+                                            <td class="border border-dark" style="min-width: 300px">{{ k }}</td>
+                                        {% elif forloop.counter == 3 %}
+                                            <td class="border border-dark" style="min-width: 160px; width: 160px; text-align: center">{{ k }}</td>
+                                        
+                                        {% else %}
+                                        
+                                            <td class="border border-dark">
+                                               
+                                                 {{ k }} 
+                                                
+                                             
+                                            
+                                                {% endif %}
+                                                
+                                                {% endfor %}  
+                                </tr>
+                                
+                                {% endfor %}
+                                
+                            </tbody>
+                            
+                        </table>
+                        
+
+
+                     
+                
+            </div>
+            
+        </div>
+        {% endfor %}
+
+    
+
+    {% endblock %}

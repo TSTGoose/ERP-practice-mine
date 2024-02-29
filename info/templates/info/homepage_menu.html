@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'index' %}">СТИ НИЯУ МИФИ</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+{% with url_name=request.resolver_match.url_name %}
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            
+              
+              
+              
+              
+            {% if request.user.is_teacher %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ request.user.teacher }}
+            </a>
+            {% include "info/menu.html" %}
+          </li>
+          {% elif request.user.is_staf %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ request.user.staf }}
+            </a>
+            {% include "info/menu.html" %}
+          </li>
+          {% elif request.user.is_sudent %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ request.user.student }}
+            </a>
+            {% include "info/menu.html" %}
+          </li>
+          {% endif %}
+          {% if request.user.is_school %}
+          <li class="nav-item">
+            <a class="nav-link" href="https://es.ssti.ru" target="_blank">Образовательный портал</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'school_edit' user.school.id %}">Редактировать профиль</a>
+          </li>
+          {% endif %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'password_change' %}">Сменить пароль</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Выйти</a>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% endwith %}

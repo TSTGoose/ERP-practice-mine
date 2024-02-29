@@ -1,0 +1,65 @@
+{% extends 'info/base.html' %}
+{% block content %}
+
+<form action="{% url 'create' id %}" method="post">
+            {% csrf_token %}
+    <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-table"></i>
+          <b>Занятие: {{lesson.id_subject}}, Группа: {{lesson.id_group}}, Дата: {{lesson.date}}, Тема занятия: <input type="text" name="topic"></b></div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                    <th class="border border-dark" scope="col">#</th>
+                    <th class="border border-dark">Имя студента</th>
+                    
+                    <th class="border border-dark">{% include "info/inst_att_status.html" %}</th>
+                    
+                </tr>
+              </thead>
+                <tbody>
+                  
+                    {% for student in students %}
+                    <tr>
+                    <th class="border border-dark" scope="row">{{forloop.counter}}</th>
+                    <td class="border border-dark">{{student}} </td>
+                    {% if subject in student.subjects.all %}
+                    <td class="border border-dark">
+                    <p>Перезачетено</p>
+                    </td>
+                    {% else %}
+                    <td class="border border-dark">
+                      
+
+                        <div class="btn-group" role="group" aria-label="Базовая группа переключателей радио">
+                          <input type="radio" class="btn-check" name="{{ student.id_people }}" id="option1{{ student.id_people }}" autocomplete="off" checked="" value="{{att_status.0.id}}">
+                          <label class="btn btn-outline-success " for="option1{{ student.id_people }}">{{att_status.0.short_name}}</label>   
+                          <input type="radio" class="btn-check" name="{{ student.id_people }}" id="option2{{ student.id_people }}" autocomplete="off"  value="{{att_status.1.id}}">
+                          <label class="btn btn-outline-danger" for="option2{{ student.id_people }}">{{att_status.1.short_name}}</label>
+                          <input type="radio" class="btn-check" name="{{ student.id_people }}" id="option3{{ student.id_people }}" autocomplete="off"  value="{{att_status.2.id}}">
+                          <label class="btn btn-outline-warning " for="option3{{ student.id_people }}">{{att_status.2.short_name}}</label>
+                          <input type="radio" class="btn-check" name="{{ student.id_people }}" id="option4{{ student.id_people }}" autocomplete="off"  value="{{att_status.3.id}}">
+                          <label class="btn btn-outline-info " for="option4{{ student.id_people }}">{{att_status.3.short_name}}</label>
+                          <input type="radio" class="btn-check" name="{{ student.id_people }}" id="option5{{ student.id_people }}" autocomplete="off"  value="{{att_status.4.id}}">
+                          <label class="btn btn-outline-secondary " for="option5{{ student.id_people }}">{{att_status.4.short_name}}</label>
+                          
+                  </div>
+
+                        
+                    </td class="border border-dark">
+                    {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+    <input class="btn btn-success" type="submit" value="Сохранить">
+</form>
+
+{% endblock %}

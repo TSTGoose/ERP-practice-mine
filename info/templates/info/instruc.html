@@ -1,0 +1,95 @@
+{% extends "info/base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+          Заполнение посещаемости через "Предметы"
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body">
+            <h2>Чтобы перейти с Главной страницы к заполнению посещаемости необходимо нажать на кнопку "Редактировать".</h2>
+            <p><img src="{% static 'info/images/subject1.png' %}" alt="" width="40%" max-height="50%"></p>
+            <h2>Чтобы перейти к заполнению посещаемости с любой другой страницы необходимо в верхнем меню нажать "Предметы".</h2>
+            <p> <img src="{% static 'info/images/subject2-2.png' %}" alt="" width="40%" max-height="70"></p>
+            <h2>Далее необходимо выбрать предмет из выпадающего списка.</h2>
+            <p><img src="{% static 'info/images/subject2.png' %}" alt="" width="80%" max-height="70"></p>
+            <h2>После нажатия на кнопку "Показать" появится таблица с занятиями по выбранному предмету и список группы.</h2>
+            <p><img src="{% static 'info/images/subject3.png' %}" alt="" width="60%" max-height="70"></p>
+            <h2>Чтобы отметить посещаемость необходимо нажать "создать" после чего откроется новая вкладка в браузере.</h2>
+            <p><img src="{% static 'info/images/subject4.png' %}" alt="" width="80%" max-height="70"></p>
+            <h2>Необходимо отметить студентов, указать тему занятия (если необходимо) и нажать кнопку "Сохранить".</h2>
+            <p><img src="{% static 'info/images/subject5.png' %}" alt="" width="50%" max-height="70"></p>
+            <h2>После сохранения появится дата занятия и тема, если была указана. Далее можно закрыть эту вкладку и продолжить работу с журналом.</h2>
+            <p><img src="{% static 'info/images/subject6.png' %}" alt="" width="50%" max-height="70"></p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+            Заполнение посещаемости через "Расписание"
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+        <div class="accordion-body">
+            <h2>Чтобы перейти с Главной страницы к заполнению посещаемости необходимо нажать на кнопку "Расписание".</h2>
+            <p><img src="{% static 'info/images/rasp1.png' %}" alt="" width="40%" max-height="50%"></p>
+            <h2>Чтобы перейти к заполнению посещаемости с любой другой страницы необходимо в верхнем меню нажать "Расписание".</h2>
+            <p> <img src="{% static 'info/images/rasp2.png' %}" alt="" width="40%" max-height="70"></p>
+            <h2>Возможно пролистывать недели с помощью соответствующих кнопок.</h2>
+            <p><img src="{% static 'info/images/rasp3.png' %}" alt="" width="80%" max-height="70"></p>
+            <h2>Чтобы отметить посещаемость необходимо нажать на номер группы, которую хотите отметить, откроется новая вкладка в браузере.</h2>
+            <p><img src="{% static 'info/images/rasp4.png' %}" alt="" width="80%" max-height="70"></p>
+            <h2>Необходимо отметить студентов, указать тему занятия (если необходимо) и нажать кнопку "Сохранить".</h2>
+            <p><img src="{% static 'info/images/rasp5.png' %}" alt="" width="50%" max-height="70"></p>
+            <h2>После сохранения появится дата занятия и тема, если была указана. Далее можно закрыть эту вкладку и продолжить работу с журналом.</h2>
+            <p><img src="{% static 'info/images/rasp6.png' %}" alt="" width="50%" max-height="70"></p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+             Просмотр статистики студента
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+        <div class="accordion-body">
+            <h2>Чтобы перейти с Главной страницы к заполнению посещаемости необходимо нажать на кнопку "Расписание".</h2>
+            <p><img src="{% static 'info/images/stat1.png' %}" alt="" width="40%" max-height="50%"></p>
+            <h2>Чтобы перейти к заполнению посещаемости с любой другой страницы необходимо в верхнем меню нажать "Расписание".</h2>
+            <p> <img src="{% static 'info/images/stat2.png' %}" alt="" width="40%" max-height="70"></p>
+            <h2>Далее необходимо выбрать студента из выпадающего списка.</h2>
+            <p><img src="{% static 'info/images/stat3.png' %}" alt="" width="80%" max-height="70"></p>
+            <h2>После нажатия на кнопку "Показать" появятся таблицы с занятиями по предметам.</h2>
+            <p><img src="{% static 'info/images/stat4.png' %}" alt="" width="60%" max-height="70"></p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+               Скачать список группы
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+          <div class="accordion-body">
+              <h2>Чтобы перейти к скачиванию списка группы необходимо в верхнем меню нажать "Список группы".</h2>
+              <p><img src="{% static 'info/images/list1.png' %}" alt="" width="40%" max-height="50%"></p>
+              <h2>Далее необходимо выбрать группу из списка.</h2>
+              <p><img src="{% static 'info/images/list2.png' %}" alt="" width="20%" max-height="70"></p>
+              <h2>После нажатия на кнопку "Показать" появятся таблица со списком группы.</h2>
+              <p><img src="{% static 'info/images/list3.png' %}" alt="" width="50%" max-height="70"></p>
+              <h2>После нажатия на кнопку "Скачать список группы" скачается Excel Таблица.</h2>
+              <p><img src="{% static 'info/images/list4.png' %}" alt="" width="50%" max-height="70"></p>
+          </div>
+        </div>
+      </div>
+  </div>
+  {% endblock %}

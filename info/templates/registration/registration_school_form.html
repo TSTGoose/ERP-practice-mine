@@ -1,0 +1,51 @@
+{% extends 'info/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Register for an account" %}{% endblock %}
+{% block content %}
+
+<form method="post" action="">
+    <div class="form-group">
+    {% csrf_token %}
+    
+                            
+                            
+        {% for f in form %}
+        
+        
+        
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="{{f.id_for_label}}">{{ f.label }} </label>
+            <div >{{ f }}</div> 
+            <ul class="errorlist">{% for error in f.errors %}
+                <li style="color: #f30909;"><b>{{error}}</b></li>
+                {% endfor %}</ul>
+            
+            <p class="help">{{ f.help_text|safe }}</p>
+        </div> 
+        
+        
+        
+        {% endfor %}
+        
+        
+        {{form.media}}
+        
+        
+    <input type="submit" value="{% trans 'Submit' %}" />
+    </div>
+</form>
+{% endblock %}
+
+
+{% comment %}
+**registration/registration_form.html**
+Used to show the form users will fill out to register. By default, has
+the following context:
+
+``form``
+    The registration form. This will be an instance of some subclass
+    of ``django.forms.Form``; consult `Django's forms documentation
+    <http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
+    information on how to display this in a template.
+{% endcomment %}

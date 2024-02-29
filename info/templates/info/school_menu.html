@@ -1,0 +1,15 @@
+
+            
+          
+          {% if request.user.is_sish %}
+          
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item {% if url_name == 'school_view' %}active{% endif %}" href="{% url 'school_view'  %}">Регистрации</a></li>
+              
+            </ul>
+      
+          
+          {% endif %}
+            
+          
+        

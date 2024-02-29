@@ -1,0 +1,97 @@
+{% extends 'info/base.html' %}
+{% load custom_tags %}
+{% block content %}
+<div class="card mb-3">       
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    </div>
+  
+              <form class="form" role="form" method="GET" action="{% url 'school_view' %}">
+                  {% csrf_token %}
+                  <div class="row">
+                  
+                  
+                  {% for f in form %}
+                  <div class="col-md-auto"><label for="{{f.id_for_label}}">{{ f.label }}: </label> {{ f }}</div>
+                  <div class="col-md-auto form-error">{{ f.errors }}</div>
+                  
+                  
+                  {% endfor %}
+                  
+                  
+                  {{form.media}}
+                  
+                </div>
+                <div class="row">
+                  <div class="col-md-auto"><input class="btn btn-success" type="submit" value="Показать"></div>
+                  </div>
+              </form>
+              <div class="card-header">
+                <i class="fas fa-table"></i>
+                <a href="{% url 'list_schools'%}" class="btn btn-success btn-lg dump">Скачать</a>
+              </div> 
+              
+      </div> 
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                        <th class="border border-dark">Дата регистрации</th>
+                        <th class="border border-dark">Фамилия</th>
+                        <th class="border border-dark">Имя</th>
+                        <th class="border border-dark">Отчество</th>
+                        
+                        <th class="border border-dark">E-mail</th>
+                        <th class="border border-dark">Номер телефона</th>
+                        <th class="border border-dark">Дата рождения</th>
+                        <th class="border border-dark">Город</th>
+                        <th class="border border-dark">VK</th>
+                        <th class="border border-dark">ФИО Родителя</th>
+                        <th class="border border-dark">Номер телефона</th>
+                        <th class="border border-dark">Школа</th>
+                        <th class="border border-dark">Класс</th>
+                        <th class="border border-dark">Предметы</th>
+                        <th class="border border-dark">Формат</th>
+                        <th class="border border-dark">Доп. предметы</th>
+                        <th class="border border-dark">Статус</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for a in schools %}
+                      
+                    <tr>
+                        <td class="border border-dark">{{ a.time_create }}</td>
+                        <td class="border border-dark">{{ a.last_name }}</td>
+                        <td class="border border-dark">{{ a.first_name }}</td>
+                        <td class="border border-dark">{{ a.second_name }}</td>
+                        <td class="border border-dark">{{ a.user.email }}</td>
+                        <td class="border border-dark">{{ a.phone_number }}</td>
+                        <td class="border border-dark">{{ a.date_of_birth }}</td>
+                        <td class="border border-dark">{{ a.town }}</td>
+                        <td class="border border-dark">{{ a.vk_link }}</td>
+                        <td class="border border-dark">{{ a.fio_parent }}</td>
+                        <td class="border border-dark">{{ a.phone_number_parent }}</td>
+                        <td class="border border-dark">{{ a.school }}</td>
+                        <td class="border border-dark">{{ a.get_class_number_display }}</td>
+                        <td class="border border-dark">{{ a.subject.all|join:", " }}</td>
+                        <td class="border border-dark">{{ a.get_format_display }}</td>
+                        <td class="border border-dark">{{ a.subject_dop.all|join:", " }}</td> 
+                        {% if a.status == True %}
+                          <td class="border border-dark">Активный</td> 
+                        {% else %} 
+                          <td class="border border-dark">Неактивный</td>
+                        {% endif %}
+                        </td>
+                        
+                    </tr>
+                      
+                    {% endfor %}
+
+                  </tbody>
+                </table>
+              </div>
+        </div>
+    </div>
+{% endblock %}
