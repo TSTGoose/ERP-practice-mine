@@ -1,77 +1,90 @@
 {% extends 'info/base.html' %}
 
+{% load static %}
+
 {% block content %}
-<div id="navigation" class="menu_btn">
-    <a class="btn btn-link " title="Предыдущая неделя" href="{% url 's_timetable_date_date' request.user.student.id_group.id_group_rasp date previous %}"> &lt; &lt; &lt; <span class="d-none d-lg-block"> Предыдущая неделя</span></a>
-    <h4 style="text-align: center">{{week}}</h4>
-    <a class="btn btn-link" title="Следующая неделя" href="{% url 's_timetable_date_date' request.user.student.id_group.id_group_rasp date next %}"><span class="d-none d-lg-block"> Следующая неделя </span> &gt; &gt; &gt; </a>
-</div>
 
-<div class="card-body">
-    <div class="table-responsive">
-        <table class="table table-bordered table-hover table-condensed ">
-            <thead>
-                <tr>
-                    {% for i in days %}
-                    <th style="width: 10px; text-align: center">{{i.1}}</th>
-
-                    {% endfor %}
-                </tr>
-            </thead>
-            <tbody>
-            {% for i in time_slots %}
-                <tr>
-                    {% for j in i %}
-                        {% if forloop.counter == 1 %}
-                            <td><b>{{ j }}</b></td>
-                        {% else %}
-                            {% if j|length > 0 %}
-                            <td weekday={{j.weekday}} para={{j.para}}>
-                                {% for k in j %}
-                                    {% if k.type == 0%}
-                                        <div id={{k.id}}>
-                                            <strong>{{k.subject}} (пр)</strong>
-                                        </div>
-                                    {% elif k.type == 1 %}
-                                        <div id={{k.id}}>
-                                            <strong>{{k.subject}} (лаб)</strong>
-                                        </div>
-                                    {% elif k.type == 2 %}
-                                        <div id={{k.id}}>
-                                            <strong>{{k.subject}} (лк)</strong>
-                                        </div>
-                                    {% endif %}
-                                    <div>
-                                        <strong>
-                                            {% for n, m, x in k.list.pairs %}
-
-                                            <a href="{% url 's_create_lesson' n m %}" target="_blank">{{x}}</a>
-                                            {% endfor %}
-                                        </strong>
-                                    </div>
-                                    {% if k.cancel %}
-                                        <div class="cancel" title="Данное занятие отменено">Отменено</div>
-                                    {% endif %}
-                                    {% if k.holyday %}
-                                        <div class="cancel" title="Выходной">Выходной</div>
-                                    {% endif %}
-                                {% endfor %}
-                            </td>
+<div class="_container">
+    <div id="navigation" class="menu_btn">
+        <a class="btn btn-link " title="Предыдущая неделя" href="{% url 's_timetable_date_date' request.user.student.id_group.id_group_rasp date previous %}">
+            <img src="/static/info/images/arrow-left.svg"> <span>Предыдущая неделя</span>
+        </a>
+        <h4 style="text-align: center">{{week}}</h4>
+        <a class="btn btn-link" title="Следующая неделя" href="{% url 's_timetable_date_date' request.user.student.id_group.id_group_rasp date next %}">
+            <span>Следующая неделя</span> <img src="/static/info/images/arrow-right.svg"> 
+        </a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered table-sm table-shedule">
+                <thead class="table-header">
+                    <tr>
+                        {% for i in days %}
+                        <th class="table__weekday-header">{{i.1}}</th>
+    
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                {% for i in time_slots %}
+                    <tr class="timetable__table">
+                        {% for j in i %}
+                            {% if forloop.counter == 1 %}
+                                <td class="table__time">
+                                    <b>{{ j }}</b>
+                                </td>
                             {% else %}
-                                <td weekday={{j}} para={{forloop.parentloop.counter}}></td>
+                                {% if j|length > 0 %}
+                                <td weekday="{{j.weekday}}" para="{{j.para}}" class="table__descipline">
+                                    {% for k in j %}
+                                        {% if k.type == 0%}
+                                            <div id={{k.id}}>
+                                                {{k.subject}} (пр)
+                                            </div>
+                                        {% elif k.type == 1 %}
+                                            <div id={{k.id}}>
+                                                {{k.subject}} (лаб)
+                                            </div>
+                                        {% elif k.type == 2 %}
+                                            <div id={{k.id}}>
+                                                {{k.subject}} (лк)
+                                            </div>
+                                        {% endif %}
+                                        <div>
+                                            <strong>
+                                                {% for n, m, x in k.list.pairs %}
+                                                    {% if request.user.student.starosta %}
+                                                        <a href="{% url 's_create_lesson' n m %}" target="_blank">{{x}}</a>
+                                                    {% else %}
+                                                        <span class="table__group">{{x}}</span>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </strong>
+                                        </div>
+                                        {% if k.cancel %}
+                                            <div class="cancel" title="Данное занятие отменено">Отменено</div>
+                                        {% endif %}
+                                        {% if k.holyday %}
+                                            <div class="cancel" title="Выходной">Выходной</div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </td>
+                                {% else %}
+                                    <td weekday={{j}} para={{forloop.parentloop.counter}}></td>
+                                {% endif %}
                             {% endif %}
-                        {% endif %}
-                    {% endfor %}
-                </tr>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% for k in weekday %}
+                {{k.4}}
+                {% for h in k %}
+                    {{h.4}}
+                {% endfor %}
             {% endfor %}
-            </tbody>
-        </table>
-        {% for k in weekday %}
-            {{k.4}}
-            {% for h in k %}
-                {{h.4}}
-            {% endfor %}
-        {% endfor %}
+        </div>
     </div>
 </div>
 
