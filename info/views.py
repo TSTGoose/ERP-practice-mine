@@ -66,7 +66,6 @@ def t_timetable(request, id_teacher):
     days_week = []
     class_matrix = [[i for i in range(7)] for j in range(7)]
     start_week = rp.json()['start']
-    # print(type(start_week))
     format = '%Y-%m-%d'
     for i in range(0, 6):
         days = datetime.datetime.strptime(start_week, format)
@@ -110,8 +109,6 @@ def t_timetable(request, id_teacher):
                     groups = []
                     groups_name = []
                     class_matrix[i][j] = lesson
-                # else:
-                # class_matrix[i][j] = DAYS_OF_WEEK[j] + time_slots[i]
             lesson = []
 
     context = {
