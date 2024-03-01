@@ -9,7 +9,7 @@ urlpatterns = [
     path('teacher/<slug:id_teacher>/t_timetable/', views.t_timetable, name='t_timetable'),
     path('teacher/<slug:id_teacher>/t_timetable/<slug:date>/<slug:next>', views.t_timetable_date_date, name='t_timetable_date_date'),
     path('student/<slug:id_group>/s_timetable/', views.s_timetable, name='s_timetable'),
-    path('teacher/<slug:id_group>/s_timetable/<slug:date>/<slug:next>', views.s_timetable_date_date,
+    path('student/<slug:id_group>/s_timetable/<slug:date>/<slug:next>', views.s_timetable_date_date,
          name='s_timetable_date_date'),
     path('teacher/<slug:id_teacher>/LessonDates/', views.t_lesson_date, name='t_lesson_date'),
     path('teacher/<int:id_lesson>/Edit_att/', views.edit_att, name='edit_att'),
