@@ -9030,9 +9030,9 @@ a.text-dark:hover, a.text-dark:focus {
 /*# sourceMappingURL=bootstrap.css.map */
 .menu_btn {
 	display: flex;
-    justify-content: space-between;
-    /* align-content: stretch; */
-    align-items: center;
+  justify-content: center;
+  /* align-content: stretch; */
+  align-items: center;
 }
 
 .menu_btn .btn {
