@@ -21,7 +21,7 @@ def form_weekdays(start_week: str, format: str) -> tuple:
         ('Friday', f'Пятница, {days_week[4]}'),
         ('Saturday', f'Суббота, {days_week[5]}'),
     )
-    print("Завершено")
+    print("Неделя сформирована")
     print(dict(DAYS_OF_WEEK))
     return DAYS_OF_WEEK
 
